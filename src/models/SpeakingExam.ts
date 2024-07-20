@@ -2,7 +2,7 @@ import { Document, Schema, model } from "mongoose";
 
 // Define a TypeScript interface for the SpeakingExam document
 interface SpeakingExam extends Document {
-  question_sets: [String];
+  question_sets: [string];
 }
 
 // Create a Mongoose schema based on the SpeakingExam interface
