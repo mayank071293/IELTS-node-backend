@@ -1,0 +1,13 @@
+{
+    "compilerOptions": {
+      "lib": ["es2018"],
+      "module": "commonjs",
+      "target": "es2018",
+      "strict": true,
+      "outDir": "dist",
+      "rootDir": ".",
+      "esModuleInterop": true
+    },
+    "include": ["lib/**/*.ts", "bin/**/*.ts"]
+  }
+  
