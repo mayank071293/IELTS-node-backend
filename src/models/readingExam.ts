@@ -1,11 +1,13 @@
 import { Document, Schema, model } from "mongoose";
 
 interface ReadingQuestion {
+  question_number: string;
   statement: string;
   options: string[];
 }
 
 const ReadingQuestionSchema = new Schema<ReadingQuestion>({
+  question_number: { type: String, required: true },
   statement: { type: String, required: true },
   options: { type: [String], required: true },
 });
@@ -13,12 +15,14 @@ const ReadingQuestionSchema = new Schema<ReadingQuestion>({
 interface ReadingQuestionSet {
   image: string; //url
   paragraph: string;
+  question_range: string; // "1-5"
   questions: ReadingQuestion[];
 }
 
 const ReadingQuestionSetSchema = new Schema<ReadingQuestionSet>({
   image: { type: String },
   paragraph: { type: String, required: true },
+  question_range: { type: String, required: true },
   questions: { type: [ReadingQuestionSchema], required: true },
 });
 
