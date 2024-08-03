@@ -1,11 +1,13 @@
 import { Document, Schema, model } from "mongoose";
 
 interface ListeningQuestion {
+  question_number: string;
   statement: string;
   options: string[];
 }
 
 const ListeningQuestionSchema = new Schema<ListeningQuestion>({
+  question_number: { type: String, required: true },
   statement: { type: String, required: true },
   options: { type: [String], required: true },
 });
@@ -13,12 +15,14 @@ const ListeningQuestionSchema = new Schema<ListeningQuestion>({
 interface ListeningQuestionSet {
   audio: string; //url
   paragraph: string;
+  question_range: string; // "1-5"
   questions: ListeningQuestion[];
 }
 
 const ListeningQuestionSetSchema = new Schema<ListeningQuestionSet>({
   audio: { type: String },
   paragraph: { type: String, required: true },
+  question_range: { type: String, required: true },
   questions: { type: [ListeningQuestionSchema], required: true },
 });
 
