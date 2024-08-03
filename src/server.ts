@@ -7,6 +7,7 @@ import configurePassport from "./config/passport";
 
 import authRoutes from "./routes/authRoutes";
 import userRoutes from "./routes/userRoutes";
+import readingExamRoutes from "./routes/readingExamRoutes";
 
 config();
 const app = express();
@@ -23,6 +24,7 @@ app.use(passport.initialize());
 // Routes
 app.use("/api/user", userRoutes);
 app.use("/api/auth", authRoutes);
+app.use("/api/readingExam",readingExamRoutes);
 
 // Connect to MongoDB
 connectDB();
