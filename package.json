@@ -40,9 +40,12 @@
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
     "mongoose": "^8.5.1",
     "passport": "^0.7.0",
     "passport-jwt": "^4.0.1"
   },
-  "overrides": { "eslint": "^9.7.0" }
+  "overrides": {
+    "eslint": "^9.7.0"
+  }
 }
