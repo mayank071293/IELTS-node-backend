@@ -1,4 +1,4 @@
-import { Document, Schema, model } from "mongoose";
+import mongoose, { Document, Schema, model, ObjectId } from "mongoose";
 
 enum ExamTypes {
     LISTENING = "LISTENING",
@@ -7,13 +7,13 @@ enum ExamTypes {
     SPEAKING = "SPEAKING"
 }
 interface Score {
-  exam_id: number;
+  exam_id: ObjectId;
   exam_type: ExamTypes;
   responses: (string | string[])[]; //sometimes there are multiple responses to a single question
   score: number;
 }
 const ScoreSchema = new Schema<Score>({
-    exam_id: { type: Number, required: true },
+    exam_id: { type: mongoose.Types.ObjectId, required: true,unique:true },
     exam_type: { type: String, enum: Object.values(ExamTypes) as string[], required: true },
     responses: { type: [Schema.Types.Mixed], required: true },
     score: { type: Number, required: true }
