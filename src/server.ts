@@ -10,6 +10,7 @@ import userRoutes from "./routes/userRoutes";
 import readingExamRoutes from "./routes/readingExamRoutes";
 import listeningExamRoutes from "./routes/listeningExamRoutes";
 import answerKeyRoutes from "./routes/answerKeyRoutes";
+import writingExamRoutes from "./routes/writingExamRoutes";
 
 config();
 const app = express();
@@ -29,6 +30,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/readingExam", readingExamRoutes);
 app.use("/api/listeningExam", listeningExamRoutes);
 app.use("/api/answerKey", answerKeyRoutes);
+app.use("/api/writingExam", writingExamRoutes);
 
 // Connect to MongoDB
 connectDB();
