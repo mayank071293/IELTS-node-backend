@@ -34,10 +34,6 @@ const getScore = async (
     console.log(answerKey);
 
     answerKey?.answers.forEach((answer) => {
-      console.log(
-        answer.options,
-        responses[parseInt(answer.question_number) - 1]
-      );
       if (
         typeof responses[parseInt(answer.question_number) - 1] == "string" &&
         responses[parseInt(answer.question_number) - 1] == answer.options[0]
